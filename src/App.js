@@ -1,13 +1,11 @@
 import React from 'react'
 import './App.css'
 import MyComponent from './MyComponent'
+import Counter from './Counter'
+import Say from './Say'
 
 function App() {
-	return (
-		<MyComponent>
-			<div>열심히 해보아요.</div>
-		</MyComponent>
-	)
+	return <Say />
 }
 
 export default App
