@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 
-const EventPracticeFunc = () => {
+const Event2 = () => {
 	const [form, setForm] = useState({
 		username: '',
 		message: '',
 	})
 
 	const { username, message } = form
+
 	const handleOnChange = ({ target: { name, value } }) =>
 		setForm({
 			...form,
 			[name]: value,
 		})
+
 	const handleOnClick = () => {
 		alert(username + message)
 		setForm({
@@ -19,6 +21,7 @@ const EventPracticeFunc = () => {
 			message: '',
 		})
 	}
+
 	return (
 		<div>
 			<h1>이벤트 연습</h1>
@@ -41,4 +44,4 @@ const EventPracticeFunc = () => {
 	)
 }
 
-export default EventPracticeFunc
+export default Event2

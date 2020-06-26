@@ -1,9 +1,8 @@
 import React from 'react'
-import './App.css'
-import Val from './ValidationSample'
+import Validation from './components/Validation'
 
 function App() {
-	return <Val />
+	return <Validation />
 }
 
 export default App
