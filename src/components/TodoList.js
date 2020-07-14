@@ -1,10 +1,16 @@
 import React from 'react'
 import TodoListItem from './TodoListItem'
-import '../style/TodoList.scss'
+import styled from 'styled-components'
+
+const StyledDiv = styled.div`
+	min-height: 320px;
+	max-height: 513px;
+	overflow-y: auto;
+`
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
 	return (
-		<div className="TodoList">
+		<StyledDiv>
 			{todos.map((todo) => (
 				<TodoListItem
 					todo={todo}
@@ -13,7 +19,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
 					onToggle={onToggle}
 				/>
 			))}
-		</div>
+		</StyledDiv>
 	)
 }
 
