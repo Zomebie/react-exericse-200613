@@ -21,6 +21,7 @@ const StyledInput = styled.input`
 		color: #dee2e6;
 	}
 `
+
 const StyledButton = styled.button`
 	background: none;
 	outline: none;
