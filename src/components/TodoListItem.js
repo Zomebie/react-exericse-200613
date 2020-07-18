@@ -11,14 +11,6 @@ const StyledItem = styled.div`
 	padding: 1rem;
 	display: flex;
 	align-items: center;
-
-	&:nth-child(even) {
-		background: #f8f9fa;
-	}
-
-	& + & {
-		border-top: 1px solid #dee2e6;
-	}
 `
 
 const StyledCheckbox = styled.div`
@@ -59,26 +51,30 @@ const StyledRemoveBtn = styled.div`
 	}
 `
 
-const TodoListItem = ({ todo, onRemove, onToggle }) => {
+const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
 	const { id, text, checked } = todo
 
 	return (
-		<StyledItem>
-			<StyledCheckbox className={cn({ checked })} onClick={() => onToggle(id)}>
-				{checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
-				<div className="text">{text}</div>
-			</StyledCheckbox>
+		<div style={style}>
+			<StyledItem>
+				<StyledCheckbox
+					className={cn({ checked })}
+					onClick={() => onToggle(id)}
+				>
+					{checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+					<div className="text">{text}</div>
+				</StyledCheckbox>
 
-			<StyledRemoveBtn
-				onClick={() => {
-					onRemove(id)
-				}}
-			>
-				<MdRemoveCircleOutline />
-			</StyledRemoveBtn>
-		</StyledItem>
+				<StyledRemoveBtn
+					onClick={() => {
+						onRemove(id)
+					}}
+				>
+					<MdRemoveCircleOutline />
+				</StyledRemoveBtn>
+			</StyledItem>
+		</div>
 	)
 }
 
-// export default TodoListItem
 export default React.memo(TodoListItem)
